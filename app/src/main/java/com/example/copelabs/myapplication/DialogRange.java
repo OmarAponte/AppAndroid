@@ -1,34 +1,31 @@
 package com.example.copelabs.myapplication;
 
-import android.app.Dialog;
-import android.content.DialogInterface;
+import android.app.DialogFragment;
+import android.content.Context;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-;import static com.example.copelabs.myapplication.R.id.imageButton2;
 
-public class MainActivity extends AppCompatActivity {
+/**
+ * Created by copelabs on 26/05/2017.
+ */
 
-    private int value;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-/*fdfadfhgh*/
+public class DialogRange {
 
-        DialogRange dialogRange = new DialogRange(this,0);
-       /* value=0;
+    private int mValue;
 
-        LayoutInflater layoutInflater = LayoutInflater.from(this);
+    public DialogRange(Context c, final int value){
+
+        mValue=value;
+
+        LayoutInflater layoutInflater = LayoutInflater.from(c);
 
         View promptView = layoutInflater.inflate(R.layout.dialog_range, null);
 
-        final AlertDialog alertD = new AlertDialog.Builder(this).create();
+        final AlertDialog alertD = new AlertDialog.Builder(c).create();
 
         ImageButton btnAdd1 = (ImageButton) promptView.findViewById(R.id.imageButton);
 
@@ -40,27 +37,27 @@ public class MainActivity extends AppCompatActivity {
 
         btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-            alertD.cancel();
+                alertD.cancel();
             }
         });
 
         btnAdd1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                if(value<10)
-                value++;
+                if(mValue<10)
+                    mValue++;
                 // btnAdd1 has been clicked
-                text.setText(value+"");
+                text.setText(mValue+"");
 
             }
         });
 
         btnAdd2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if(value>0)
-                    value--;
+                if(mValue>0)
+                    mValue--;
                 // btnAdd2 has been clicked
-                text.setText(value+"");
+                text.setText(mValue+"");
 
             }
         });
@@ -68,11 +65,6 @@ public class MainActivity extends AppCompatActivity {
         alertD.setView(promptView);
 
         alertD.show();
-
-
-
-*/
     }
-
 
 }
